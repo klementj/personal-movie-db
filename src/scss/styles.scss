@@ -1,0 +1,40 @@
+// import
+@import "../../node_modules/materialize-css/sass/materialize.scss";
+
+$bg-color: #424242;
+$fore-color: #ffffff;
+
+body {
+    background: $bg-color;
+    color: $fore-color;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+img {
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.card {
+    background-color: black;   
+}
+
+.card .card-title {
+    font-weight: 500;
+}
+#sec {
+    padding: 5px;
+    padding-top: 30px;
+}
+
+
+
+
+

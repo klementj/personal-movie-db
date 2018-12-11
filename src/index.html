@@ -1,11 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Webpack boilerplate</title>
-</head>
-<body>
-  
-</body>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <div class="container">
+      <header>
+          <h1>Personal Movie DB</h1>     
+      </header>  
+    </div>
+
+      <!-- Favorite Movies -->
+      <div class="container">
+        <h2>Favorite Movies</h2>
+      </div>
+
+      <main>       
+        <section class="col">  
+          <div class="grey darken-4" id="sec">
+            <div class="container">
+              <div class="row">
+
+                <article class="col s12 m5 l3">
+                  <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                      <img class="activator" src="img/they_live.bmp">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-title activator white-text text-darken-4">The Live<i class="material-icons right">arrow_upward</i></span>
+                      <p>Year: 1988<br>Genre: Sci-Fi</p>
+                      <p><a href="#">Remove from Favorites</a></p>
+                    </div>
+                    <div class="card-reveal black">
+                      <span class="card-title white-text text-darken-4">The Live<i class="material-icons right">close</i></span>
+                      <p>A drifter discovers a pair of sunglasses that allow him to wake up to the fact that aliens have taken over the Earth.</p>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="col s12 m5 l3">
+                  <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                      <img class="activator" src="img/a_sunday_in_hell.bmp">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-title activator white-text text-darken-4">A Sunday in Hell<i class="material-icons right">arrow_upward</i></span>
+                      <p>Year: 1976<br>Genre: Documentary</p>
+                      <p><a href="#">Remove from Favorites</a></p>
+                    </div>
+                    <div class="card-reveal black">
+                      <span class="card-title white-text text-darken-4">A Sunday in Hell<i class="material-icons right">close</i></span>
+                      <p>The film follows the French Paris-Roubaix spring classic, notorious for the hellish paves or cobbled roads of the north, which are no longer used for traffic but only for transporting.</p>
+                    </div>
+                  </div>
+                </article>
+
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- All Movies -->
+        <div class="container">
+        <section class="col">
+          <h2>All Movies</h2>
+          <div class="row">
+
+            <article class="col s12 m5 l3">
+              <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="img/brazil.bmp">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator white-text text-darken-4">Brazil<i class="material-icons right">arrow_upward</i></span>
+                  <p><a href="#">Add to Favorites</a></p>
+                </div>
+                <div class="card-reveal black">
+                  <span class="card-title white-text text-darken-4">Brazil<i class="material-icons right">close</i></span>
+                  <p>A bureaucrat, in a retro-future world, tries to correct an administrative error, and becomes an enemy of the state.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="col s12 m5 l3">
+              <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="img/trading_places.bmp">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator white-text text-darken-4">Trading Places<i class="material-icons right">arrow_upward</i></span>
+                  <p><a href="#">Add to Favorites</a></p>
+                </div>
+                <div class="card-reveal black">
+                  <span class="card-title white-text text-darken-4">Trading Places<i class="material-icons right">close</i></span>
+                  <p>A snobbish investor and a wily street con artist find their positions reversed as part of a bet by two callous millionaires.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="col s12 m5 l3">
+              <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="img/groundhog_day.bmp">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator white-text text-darken-4">Groundhog Day<i class="material-icons right">arrow_upward</i></span>
+                  <p><a href="#">Add to Favorites</a></p>
+                </div>
+                <div class="card-reveal black">
+                  <span class="card-title white-text text-darken-4">Groundhog Day<i class="material-icons right">close</i></span>
+                  <p>A weatherman finds himself inexplicably living the same day over and over again.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="col s12 m5 l3">
+              <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="img/pi.bmp">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator white-text text-darken-4">Pi<i class="material-icons right">arrow_upward</i></span>
+                  <p><a href="#">Add to Favorites</a></p>
+                </div>
+                <div class="card-reveal black">
+                  <span class="card-title white-text text-darken-4">Pi<i class="material-icons right">close</i></span>
+                  <p>A paranoid mathematician searches for a key number that will unlock the universal patterns found in nature.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="col s12 m5 l3">
+              <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="img/reptilicus.bmp">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator white-text text-darken-4">Reptilicus<i class="material-icons right">arrow_upward</i></span>
+                  <p><a href="#">Add to Favorites</a></p>
+                </div>
+                <div class="card-reveal black">
+                  <span class="card-title white-text text-darken-4">Reptilicus<i class="material-icons right">close</i></span>
+                  <p>After copper miners discover part of the frozen tail of a prehistoric monster in Lapland, scientists inadvertently bring it back to life.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer>
+        <p class="center-align">Personal Movie DB - c 2018 ligebanan</p>
+      </footer>
+    </div>
+
+  </body>
 </html>

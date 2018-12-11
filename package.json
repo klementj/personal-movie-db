@@ -12,7 +12,9 @@
   },
   "author": "klement",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "materialize-css": "^1.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.1.5",
     "@babel/preset-env": "^7.1.5",
