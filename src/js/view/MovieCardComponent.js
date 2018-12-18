@@ -2,7 +2,7 @@ export default class MovieCardComponent{
   constructor(movie){
     this.title = movie.Title
     this.poster = movie.Poster
-    this.description = movie.Description
+    this.plot = movie.Plot
     this.year = movie.Year
     this.genre = movie.Genre
     // this.id = movie.id
@@ -22,7 +22,7 @@ export default class MovieCardComponent{
           </div>
           <div class="card-reveal black">
             <span class="card-title white-text text-darken-4">${this.title}<i class="material-icons right">close</i></span>
-            <p>${this.description}</p>
+            <p>${this.plot}</p>
           </div>
         </div>
     </article>
