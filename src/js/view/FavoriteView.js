@@ -10,7 +10,7 @@ export default class FavoriteView{
       })
     }
 
-    const favoriteHTML = `
+    return `
       <!-- Favorite Movies -->
       <div class="container">
         <h2>Favorite Movies</h2>
@@ -27,7 +27,6 @@ export default class FavoriteView{
           </div>
         </section>
     `
-    return favoriteHTML
   }
 
   static addMovieToView(movie){
