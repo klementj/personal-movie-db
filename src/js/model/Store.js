@@ -1,9 +1,9 @@
-class Store{
-  constructor(){
-    let movieDB
-
-    if (!localStorage.getItem('movieDB')) {
-      movieDB =  [
+class Store {
+  constructor(storeName='movieDB', store = {}) {
+    this.storeName = storeName
+    
+    if (!localStorage.getItem(storeName)) {
+      store =  [
         {
           "Title": "Blade Runner",
           "Year": 1982,
@@ -59,14 +59,26 @@ class Store{
           "Type": "movie"
         }
       ]
-      // console.log('DEBUG: movieDB with test data', movieDB)
-      return movieDB
-    } else {
-      movieDB = JSON.parse(localStorage['movieDB'])
-      console.log('MovieDB was in localsStorage', movieDB)
+      return store
     }
+    return store = {outSideLoop: 'outside'}
   }
-
 }
 
-export let store = new Store();
+let store
+function getDefaultStore() {
+  if (!store) {
+    store = new Store()
+    console.log('Store in getDefaultStore()', store)
+  }
+  return store
+}
+
+export function getMovie(key, store = getDefaultStore()) {
+  // Find a movie in the store objekt
+  return store
+}
+
+export function saveToLocalStorage(){
+
+}
