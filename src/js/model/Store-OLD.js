@@ -1,12 +1,31 @@
 class Store{
   constructor(){
-    this.movieDB = '';
+    this.movieDB = null;
     
     if (!localStorage.getItem('movieDB')) {
       this.movieDB = this.loadFromLocalStorage()
+      console.log('MovieDB if EMPTY localstorage', this.movieDB)
     } else {
       this.movieDB = JSON.parse(localStorage.getItem('movieDB'))
+      console.log('MovieDB', this.movieDB)
     }
+  }
+
+  addMovie(movie){
+    /**
+     * Make sure movieObject is right structure ELSE make it
+     * Push new object on to array
+     */
+
+    //  Push new object on to this.movie.DB array
+    this.movieDB.push(movie)
+  }
+
+  removeMovie(movie){
+    /**
+     * Check if movie exist
+     * THEN remove it from store. 
+     */
   }
   
   saveToLocalStorage(){
