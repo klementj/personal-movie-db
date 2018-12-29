@@ -1,66 +1,38 @@
+import { store } from '../model/Store-OLD';
 import FavoriteView from '../view/FavoriteView'
 
 export default class FavoriteController{
 
-  /**
-   * Load from store (Maybe pass store to favoriteview so no need to load store in favoriteView)
-   * Call createView in FavoriteView (move html to favoriteview)
-   * Setup (or call?) event listeners
-   * ONLY CALL THIS SETUP
-   */
-  static setupView(){
-    const movieCardHTML = new FavoriteView().populateWithMovies()
-    const favoriteHTML = `
-      <!-- Favorite Movies -->
-      <div class="container">
-        <h2>Favorite Movies</h2>
-      </div>
-
-      <main>       
-        <section class="col">  
-          <div class="grey darken-4" id="sec">
-            <div class="container">
-              <div class="row" id="favoriteSection">
-                ${movieCardHTML}
-              </div>
-            </div>
-          </div>
-        </section>
-    `
+  static setup(){
+    // Setup view and append to document
+    const favoriteHTML = FavoriteView.createView(store)
     document.body.insertAdjacentHTML('beforeend', favoriteHTML)
-  }
-
-  static setupEventListeners(){
+    
     const favoriteSection = document.getElementById('favoriteSection')
-
-    favoriteSection.addEventListener('click', (e) => {
-      const clickedElement = e.target;
-      // console.log(clickedElement)
-
+    // Setup eventlisteners
+    favoriteSection.addEventListener('click', (event) => {
+      const clickedElement = event.target
       if (clickedElement.matches('a.favorite-movie-button')) {
+        console.log(clickedElement.dataset)
+        // Can also use clickedElement.dataset
+        // Performance:
+        // https://jsperf.com/data-dataset
         const movieID = clickedElement.getAttribute('data-id')
-        
-        // removeParrentArticle from DOMError
         clickedElement.closest('article').remove()
-        // clickedElement.parentElement.parentElement.parentElement.parentElement.remove()
         console.log(`Removed movie with imdbID ${movieID} from favorite section`)
-
-        // remove movie from Store
-
       }
     })
   }
 
-  static addMovie(){
+  static addMovie(movie){
     const favoriteSection = document.getElementById('favoriteSection')
-    // Create new movie card component and append
-    document.body.insertAdjacentHTML('beforeend', favoriteSection)
+    // Create new movie card component 
+    const movieHTML = FavoriteView.addMovieToView(movie)
+    // Append movieCard
+    favoriteSection.insertAdjacentHTML('beforeend', movieHTML)
+    // Call and change store
+    store.addMovie(movie)
 
 
-    /**
-     * Call add movie in favoriteView (everything that is seen)
-     * Call and change the store
-     */
   }
-
 }

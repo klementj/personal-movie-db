@@ -31,8 +31,8 @@ class App{
      * FAVORITE SECTION
     */
     // Create new FavoritesController and call setupview() method
-    FavoriteController.setupView()
-    FavoriteController.setupEventListeners()
+    FavoriteController.setup()
+    // FavoriteController.setupEventListeners()
 
     /**
      * FOOTER
