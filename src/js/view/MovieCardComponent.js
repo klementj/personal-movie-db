@@ -5,7 +5,7 @@ export default class MovieCardComponent{
     this.plot = movie.Plot
     this.year = movie.Year
     this.genre = movie.Genre
-    // this.id = movie.id
+    this.id = movie.imdbID
   }
 
   render(){
@@ -18,7 +18,7 @@ export default class MovieCardComponent{
           <div class="card-content">
             <span class="card-title activator white-text text-darken-4">${this.title}<i class="material-icons right">arrow_upward</i></span>
             <p>Year: ${this.year}<br>Genre: ${this.genre}</p>
-            <p><a href="#">Add to Favorites</a></p>
+            <p><a type="button" class="favorite-movie-button" data-id="${this.id}">${ this.fav === true ? `remove from fav` : `Remove` }</a></p>
           </div>
           <div class="card-reveal black">
             <span class="card-title white-text text-darken-4">${this.title}<i class="material-icons right">close</i></span>
