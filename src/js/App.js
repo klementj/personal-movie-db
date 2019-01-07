@@ -1,4 +1,5 @@
-import FavoriteController from './controller/FavoriteController'
+import { setupFavorite, addMovie } from './controller/FavoriteController'
+import { setupSearch } from './controller/SearchController';
 import { store } from './model/Store-OLD';
 // import Store from './model/Store';
 
@@ -13,26 +14,25 @@ class App{
     const headerHTML = `
       <div class="container">
         <header>
-          <h1>Personal Movie DB</h1>     
+          <h1>Personal Movie DB</h1>
         </header>  
       </div>
     `
     // Insert headerHTML in document
     document.body.insertAdjacentHTML('beforeend', headerHTML)
 
-
+    
     /** 
      * SEARCH SECTION
-    */
-    // Create new SearchControllerController and call setupview() method
-
+     * setup of view and eventlisteners
+     */
+    setupSearch()
 
     /** 
      * FAVORITE SECTION
+     * setup of view and eventlisteners
     */
-    // Create new FavoritesController and call setupview() method
-    FavoriteController.setup()
-    // FavoriteController.setupEventListeners()
+    setupFavorite()
 
     /**
      * FOOTER
@@ -58,4 +58,4 @@ class App{
 }
 
 // Start at new app instance when document content is loaded
-document.addEventListener('DOMContentLoaded', (e) => new App())
+document.addEventListener('DOMContentLoaded', (event) => new App())
