@@ -17,7 +17,7 @@ export default class MovieCardComponent{
           </div>
           <div class="card-content">
             <span class="card-title activator white-text text-darken-4">${this.title}<i class="material-icons right">arrow_upward</i></span>
-            <p>Year: ${this.year}<br>Genre: ${this.genre}</p>
+            <p>Year: ${this.year}<br>${this.genre ? `Genre: ${this.genre}` : ''}</p>
             <p><a type="button" class="favorite-movie-button" data-id="${this.id}">${ this.fav === true ? `remove from fav` : `Remove` }</a></p>
           </div>
           <div class="card-reveal black">
