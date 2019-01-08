@@ -1,4 +1,4 @@
-import { setupFavorite, addMovie } from './controller/FavoriteController'
+import { setupFavorite } from './controller/FavoriteController'
 import { setupSearch } from './controller/SearchController';
 import { store } from './model/Store-OLD';
 // import Store from './model/Store';
@@ -49,13 +49,15 @@ class App{
     // Insert footerHTML in document
     document.body.insertAdjacentHTML('beforeend', footerHTML)
 
-    let foo = store.loadFromLocalStorage()
-    console.log('loadFromLocalStorage in App.js', foo)
     // Eventlistener that saves to localStorage when the window is unloaded.
     // window.addEventListener('beforeunload', (e) => store.saveToLocalStorage())
     window.addEventListener('beforeunload', store.saveToLocalStorage())
+    
+    
+    // debug
+    console.log('loadFromLocalStorage in App.js', store.loadFromLocalStorage())
   }
 }
 
 // Start at new app instance when document content is loaded
-document.addEventListener('DOMContentLoaded', (event) => new App())
+document.addEventListener('DOMContentLoaded', () => new App())
