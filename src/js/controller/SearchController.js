@@ -14,6 +14,7 @@ export function setupSearch(){
    */
   const searchInput = document.getElementById('search_input')
   searchInput.addEventListener('keydown', (event) => {
+    // If key is enter
     if (event.keyCode === 13) {
       searchMovie(searchInput.value)
         .then(response => {
