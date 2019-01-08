@@ -3,9 +3,13 @@ import MovieCardComponent from './MovieCardComponent'
 export function createFavoriteView(store){
   let movieCardHTML = ''
   if (store) {
-    store.movieDB.forEach(movieObject => {
-      movieCardHTML += new MovieCardComponent(movieObject).render()
-    })
+    const movies = Object.values(store.movieDB)
+    movies.forEach(movie => {
+      console.log(movie)
+      movieCardHTML += new MovieCardComponent(movie).render()
+    });
+  } else {
+    console.error('No store passed to createFavoriteView')
   }
 
   return `

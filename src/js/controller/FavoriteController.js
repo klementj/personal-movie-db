@@ -18,9 +18,7 @@ export function setupFavorite(){
 
 function removeMovie(movieElement){
   const movieID = movieElement.getAttribute('data-id')
-  // Remove from DOM
   movieElement.closest('article').remove()
-  // Remove from store
   store.removeMovie(movieID)
 }
 
@@ -33,6 +31,4 @@ export function addMovie(movie){
   favoriteSection.insertAdjacentHTML('beforeend', movieHTML)
   // Call and change store
   store.addMovie(movie)
-
-
 }
