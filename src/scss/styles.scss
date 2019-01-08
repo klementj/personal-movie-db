@@ -1,4 +1,3 @@
-// import
 @import "../../node_modules/materialize-css/sass/materialize.scss";
 
 $bg-color: #424242;
@@ -22,6 +21,10 @@ img {
     object-fit: cover;
 }
 
+.col.l3{
+    height: 455px;
+}
+
 .card {
     background-color: black;   
 }
@@ -42,7 +45,7 @@ a{
     cursor: pointer;
 }
 
-
-
-
-
+.card-title{
+    white-space: nowrap;
+    overflow: -moz-hidden-unscrollable;
+}
