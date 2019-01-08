@@ -1,10 +1,10 @@
 export default class Movie{
   constructor(movie){
-    this.title = movie.Title
-    this.year = movie.Year
-    this.id = movie.imdbID
-    this.poster = movie.Poster
-    this.genre = movie.Genre
-    this.plot = movie.Plot
+    this.title = movie.title || movie.Title
+    this.year = movie.year || movie.Year 
+    this.id = movie.id || movie.imdbID
+    this.poster = movie.poster || movie.Poster
+    this.genre = movie.genre || movie.Genre
+    this.plot = movie.plot || movie.Plot 
   }
 }
