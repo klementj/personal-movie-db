@@ -11,16 +11,19 @@ export function setupFavorite(){
   favoriteSection.addEventListener('click', (event) => {
     const clickedElement = event.target
     if (clickedElement.matches('a.favorite-movie-button')) {
-      console.log(clickedElement.dataset)
-      // Can also use clickedElement.dataset
-      // Performance:
-      // https://jsperf.com/data-dataset
-      const movieID = clickedElement.getAttribute('data-id')
-      clickedElement.closest('article').remove()
-      console.log(`Removed movie with imdbID ${movieID} from favorite section`)
+      removeMovie(clickedElement)
     }
   })
 }
+
+function removeMovie(movieElement){
+  const movieID = movieElement.getAttribute('data-id')
+  // Remove from DOM
+  movieElement.closest('article').remove()
+  // Remove from store
+  store.removeMovie(movieID)
+}
+
 
 export function addMovie(movie){
   const favoriteSection = document.getElementById('favoriteSection')
