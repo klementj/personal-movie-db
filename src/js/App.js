@@ -1,12 +1,12 @@
 import { setupFavorite } from './controller/FavoriteController'
 import { setupSearch } from './controller/SearchController';
 import { store } from './model/Store-OLD';
+
+// import { store } from './model/Store';
 // import Store from './model/Store';
 
 class App{
   constructor() {
-    // let foo = getMovie()
-    // console.log(foo)
     /** 
      * HEADER
     */
@@ -50,8 +50,7 @@ class App{
     document.body.insertAdjacentHTML('beforeend', footerHTML)
 
     // Eventlistener that saves to localStorage when the window is unloaded.
-    // window.addEventListener('beforeunload', (e) => store.saveToLocalStorage())
-    window.addEventListener('beforeunload', store.saveToLocalStorage())
+    // window.addEventListener('beforeunload', store.saveToLocalStorage())
     
     
     // debug
