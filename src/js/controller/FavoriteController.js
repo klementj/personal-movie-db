@@ -1,25 +1,24 @@
-import { store } from '../model/Store-OLD';
+import { store } from '../model/Store';
 import { createFavoriteView, addMovieToView } from '../view/FavoriteView'
 
 export function setupFavorite(){
   // Setup view and append to document
   const favoriteHTML = createFavoriteView(store)
   document.body.insertAdjacentHTML('beforeend', favoriteHTML)
-  
   const favoriteSection = document.getElementById('favoriteSection')
   // Setup eventlisteners
   favoriteSection.addEventListener('click', (event) => {
     const clickedElement = event.target
     if (clickedElement.matches('a.favorite-movie-button')) {
-      removeMovie(clickedElement)
+      _removeMovie(clickedElement)
     }
   })
 }
 
-function removeMovie(movieElement){
+function _removeMovie(movieElement){
   const movieID = movieElement.getAttribute('data-id')
   movieElement.closest('article').remove()
-  store.removeMovie(movieID)
+  store.removeMovieFromStore(movieID)
 }
 
 

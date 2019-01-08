@@ -1,9 +1,6 @@
 import { setupFavorite } from './controller/FavoriteController'
 import { setupSearch } from './controller/SearchController';
-import { store } from './model/Store-OLD';
-
-// import { store } from './model/Store';
-// import Store from './model/Store';
+import { store } from './model/Store';
 
 class App{
   constructor() {
@@ -50,11 +47,7 @@ class App{
     document.body.insertAdjacentHTML('beforeend', footerHTML)
 
     // Eventlistener that saves to localStorage when the window is unloaded.
-    // window.addEventListener('beforeunload', store.saveToLocalStorage())
-    
-    
-    // debug
-    console.log('loadFromLocalStorage in App.js', store.loadFromLocalStorage())
+    window.addEventListener('beforeunload', store.saveToLocalStorage())
   }
 }
 
