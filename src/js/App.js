@@ -39,7 +39,7 @@ class App{
         <!-- Footer -->
         </main>
         <footer>
-          <p class="center-align">Personal Movie DB - %copy 2018 ligebanan</p>
+          <p class="center-align">Personal Movie DB - &copy; 2018 ligebanan</p>
         </footer>
       </div>
     `
