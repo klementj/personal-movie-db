@@ -5,25 +5,23 @@ import { secret } from './secret'
 const URI = 'http://www.omdbapi.com/',
       KEY = secret.KEY
 
-export async function searchMovie(movieTitle){
+export function searchMovie(movieTitle){
   try {
     const URL = URI
               + `?`
-              + `s=${movieTitle}`
+              + `s='${movieTitle}'`
               + `&apikey=${KEY}`
               // debug
               console.log('searchMovie URL:', URL)
 
-     return await fetch(URL)
+     return fetch(URL)
       .then(response => response.json())
-      // .then(response => response)
-
   } catch (error) {
     console.error(error)
   }
 } 
 
-export async function getMovieFromID(imdbID){
+export function getMovieFromID(imdbID){
   try {
     const URL = URI
               + `?`
@@ -32,7 +30,7 @@ export async function getMovieFromID(imdbID){
               // debug
               console.log('getMovie URL:', URL)
 
-    return await fetch(URL)
+    return fetch(URL)
       .then( response => {
         response.json()
       }).catch( error => {
