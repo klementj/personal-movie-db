@@ -1,4 +1,4 @@
-import { createSearchBar, showSearchResults, createSearchSection } from '../view/SearchView';
+import { createSearchBar, createSearchSection, showSearchResults } from '../view/SearchView';
 import { searchMovie } from '../model/API';
 
 export function setupSearch(){
