@@ -6,19 +6,16 @@ const URI = 'http://www.omdbapi.com/',
       KEY = secret.KEY
 
 export function searchMovie(movieTitle){
-  try {
-    const URL = URI
-              + `?`
-              + `s='${movieTitle}'`
-              + `&apikey=${KEY}`
-              // debug
-              console.log('searchMovie URL:', URL)
+  const URL = URI
+            + `?`
+            + `s='${movieTitle}'`
+            + `&apikey=${KEY}`
+            // debug
+            console.log('searchMovie URL:', URL)
 
-     return fetch(URL)
-      .then(response => response.json())
-  } catch (error) {
-    console.error(error)
-  }
+    return fetch(URL)
+      .then( response => response.json())
+      .catch( error => console.error(error))
 } 
 
 export function getMovieFromID(imdbID){
